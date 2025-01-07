@@ -17,9 +17,9 @@
     margin: 20px;
     color: #FFD700;
     text-shadow: 
-        0 0 10px #FF1493,
-        0 0 20px #FF1493,
-        0 0 30px #FF1493;
+        0 0 10px purple,
+        0 0 20px purple,
+        0 0 30px purple;
     animation: timeGlow 1.5s ease-in-out infinite;
 }
 
