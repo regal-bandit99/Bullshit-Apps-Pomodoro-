@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="timer">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+        <div class="controls">
+            <button onclick="setWorkMode()" class="mode-toggle work">Work Mode</button>
+            <button onclick="setRestMode()" class="mode-toggle rest">Rest Mode</button>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+        <div class="disco-ball">
+            <div class="ball"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

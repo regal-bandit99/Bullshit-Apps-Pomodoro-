@@ -1,0 +1,181 @@
+/* Add retro font import */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    background: linear-gradient(45deg, #FF1493, #4B0082, #FF1493);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    animation: discoPulse 3s infinite;
+}
+
+.timer {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 92px;
+    margin: 20px;
+    color: #FFD700;
+    text-shadow: 
+        0 0 10px #FF1493,
+        0 0 20px #FF1493,
+        0 0 30px #FF1493;
+    animation: timeGlow 1.5s ease-in-out infinite;
+}
+
+.controls button {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 18px;
+    margin: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    background: #FFD700;
+    border: none;
+    border-radius: 35px;
+    color: #4B0082;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+    background: #FF1493;
+    color: #FFD700;
+    box-shadow: 0 0 15px #FF1493;
+}
+
+.mode-toggle {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 18px;
+    margin: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 35px;
+    transition: all 0.3s;
+    color: #FFD700;
+    text-transform: uppercase;
+}
+
+.mode-toggle.work {
+    background: #4B0082;
+    box-shadow: 0 0 15px #FF1493;
+    color: #FFD700;
+}
+
+.mode-toggle.rest {
+    background: #FF1493;
+    color: #FFD700;
+    box-shadow: 0 0 15px #4B0082;
+}
+
+/* Disco animations */
+@keyframes discoPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes timeGlow {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* Add some groovy background to the body */
+body {
+    background-color: #000;
+    background-image: radial-gradient(circle, #4B0082 10%, transparent 10%),
+    radial-gradient(circle, #FF1493 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    animation: discoMove 4s linear infinite;
+}
+
+@keyframes discoMove {
+    from { background-position: 0 0, 25px 25px; }
+    to { background-position: 50px 50px, 75px 75px; }
+}
+
+h1 {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 48px;
+    color: #FFD700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 
+        0 0 10px #FF1493,
+        0 0 20px #FF1493,
+        0 0 30px #4B0082,
+        0 0 40px #4B0082;
+    animation: discoTitle 1s ease-in-out infinite;
+}
+
+@keyframes discoTitle {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 
+            0 0 10px #FF1493,
+            0 0 20px #FF1493,
+            0 0 30px #4B0082;
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 
+            0 0 20px #FFD700,
+            0 0 30px #FFD700,
+            0 0 40px #FF1493;
+    }
+}
+
+.disco-ball {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;  /* Makes sure it doesn't interfere with clicks */
+    z-index: 1000;
+    animation: bounce 7s linear infinite;
+}
+
+.ball {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 50% 50%, #FFF 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 60%),
+        repeating-linear-gradient(30deg, 
+            #FFD700 0%, #FFD700 7%, 
+            #FF1493 7%, #FF1493 14%, 
+            #4B0082 14%, #4B0082 21%);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: spin 3s linear infinite;
+}
+
+@keyframes bounce {
+    0% { 
+        transform: translate(0, 0); 
+    }
+    25% { 
+        transform: translate(calc(100vw - 60px), 0);
+    }
+    50% { 
+        transform: translate(calc(100vw - 60px), calc(100vh - 60px));
+    }
+    75% { 
+        transform: translate(0, calc(100vh - 60px));
+    }
+    100% { 
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
